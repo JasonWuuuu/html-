@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Table</title>
+    <style>
+        table, td, th {
+            border: solid 1px;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        /*在已设置border-collapse（合并边框）的情况下无效*/
+        table td, table th {
+            width: 100px;
+            text-align: center;
+        }
+
+        table th, table td {
+            padding: 15px;
+        }
+
+        #tab1 tr:nth-child(even) {
+            background: lightgray;
+        }
+    </style>
+</head>
+<body>
+<table id="tab1">
+    <caption>学生信息</caption>  <!--标题标签-->
+    <tr>
+        <th>姓名</th>
+        <th>学号</th>
+        <th>专业</th>
+        <th colspan="2">联系方式</th>   <!--让一个格占两列-->
+    </tr>
+    <tr>
+        <td>Jason</td>
+        <td>009878</td>
+        <td>信息工程</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Sam</td>
+        <td>009909</td>
+        <td>medic</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Sam</td>
+        <td>009909</td>
+        <td>medic</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Sam</td>
+        <td>009909</td>
+        <td>medic</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Sam</td>
+        <td>009909</td>
+        <td>medic</td>
+        <td></td>
+        <td></td>
+    </tr>
+
+</table>
+
+<table style="width:100%">
+    <tr>
+        <th>Name:</th>
+        <td>Bill Gates</td>
+    </tr>
+    <tr>
+        <th rowspan="2">Telephone:</th>  <!--rowspan让一个格占两行-->
+        <td>55577854</td>
+    </tr>
+    <tr>
+        <td>55577855</td>
+    </tr>
+</table>
+
+
+</body>
+</html>
