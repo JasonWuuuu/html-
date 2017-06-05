@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圣杯布局</title>
+    <style>
+        /*左右两栏宽度固定，中间盒子宽度自适应*/
+        body {
+            margin: 0;
+            padding: 0;
+            min-width: 700px;
+        }
+        .container {
+            overflow:auto;
+            /*块级元素宽度直接默认为父元素的100%*/
+            height: 400px;
+            padding:0 200px;
+        }
+        .container:after{
+            content:"";
+            display: block;
+            clear:both;
+        }
+
+        header{float:left;}
+        header, footer {
+            height: 100px;
+            width: 100%;
+            letter-spacing: 3px;
+            background: lightgray;
+            color: snow;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .middle {
+            width: 100%;
+            height: 200px;
+            float:left;
+        }
+        .left{
+            width: 200px;
+            height: 200px;
+            border-right: 1px solid lightgray;
+            float: left;
+            margin-left: -100%;
+            position:relative;
+            left:-200px;
+        }
+        .left li {
+            list-style-type: none;
+            margin: 0 0 15px 0;
+        }
+        .left li a {
+            text-decoration: none;
+        }
+        .right {
+            width: 200px;
+            height: 200px;
+            background: lightblue;
+            float: left;
+            /*负margin为什么可以实现这样的效果：文档流中，元素最终边界是由margin决定 负margin相当于将文档流中元素往前移动，原来占据的位置被释放*/
+            margin-left:-200px;
+            /*float跟position：relavive为什么可以共用？？*/
+            position:relative;
+            right:-200px;
+        }
+
+        footer {
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <h1>某某电商</h1>
+</header>
+<div class="container">
+    <article class="middle">
+        <h1>London</h1>
+        <p>London is the capital city of England. It is the most populous city in the United Kingdom, with a
+            metropolitan
+            area of over 13 million inhabitants.</p>
+        <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to
+            its
+            founding by the Romans, who named it Londinium.</p>
+    </article>
+    <nav class="left">
+        <ul>
+            <li><a href="#">主页</a></li>
+            <li><a href="#">公司简介</a></li>
+            <li><a href="#">产品展示</a></li>
+        </ul>
+    </nav>
+
+    <article class="right">
+
+
+    </article>
+</div>
+<footer>Copyright &copy;某某电商公司</footer>
+
+
+</body>
+</html>
